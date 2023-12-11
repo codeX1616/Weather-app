@@ -9,11 +9,23 @@ import snow_icon from '../Assets/snow.png'
 import wind_icon from '../Assets/wind.png'
 
 const WeatherApp = () => {
+
+    let apiKey = "cd71700bb7f7dfd51024b667eb8f0f84";
+
+    const search = async () => {
+        const element = document.getElementsByClassName("cityInput");
+        if (element[0].value === "") {
+            return 0;
+        }
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${elementString}&units=Metric&appid=cd71700bb7f7dfd51024b667eb8f0f84`;
+        let response = await fetch(url);
+    }
+
     return (
         <div className='container'>
             <div className='top-bar'>
                 <input type="text" className='cityInput' placeholder='Search'/>
-                <div className='search-icon'>
+                <div className='search-icon' onClick={() => search()}>
                     <img src={search_icon} alt=' ' />
                 </div>
             </div>
