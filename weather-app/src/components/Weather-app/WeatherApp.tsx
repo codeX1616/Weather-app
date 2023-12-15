@@ -14,10 +14,10 @@ const WeatherApp = () => {
 
     const search = async () => {
         const element = document.getElementsByClassName("cityInput");
-        if (element[0].value === "") {
+        if (element[0].nodeValue === "") {
             return 0;
         }
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${elementString}&units=Metric&appid=cd71700bb7f7dfd51024b667eb8f0f84`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].nodeValue}&units=Metric&appid=cd71700bb7f7dfd51024b667eb8f0f84`;
         let response = await fetch(url)
     }
 
